@@ -20,6 +20,7 @@ CLASSIFIERS = [
 LONG_DESC = open('README.rst', 'rt').read() + '\n\n' + \
             open('CHANGES.rst', 'rt').read()
 
+TESTS_REQUIRE = open('requirements-test.txt', 'r').read()
 
 def find_version(fname):
     """Parse file & return version number matching 0.0.1 regex
@@ -53,6 +54,7 @@ setup(
              'internationalization',
     url='https://github.com/savoirfairelinux/num2words',
     packages=find_packages(exclude=['tests']),
+    tests_require=TESTS_REQUIRE,
     test_suite='tests',
     classifiers=CLASSIFIERS,
     scripts=['bin/num2words'],
